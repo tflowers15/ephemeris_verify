@@ -41,6 +41,13 @@ def get_common_args(login_required=True, log_file=False):
         help="Target Galaxy instance URL/IP address",
         default="http://localhost:8080",
     )
+    con_group.add_argument(
+        "--skip-verify",
+        "--skip_verify",
+        dest="skip_verify",
+        help="Skip verification of SSL Certificate for Galaxy connection.",
+        action="store_true"
+    )
 
     if login_required:
         con_group.add_argument("-u", "--user", help="Galaxy user email address")
